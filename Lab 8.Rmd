@@ -28,7 +28,7 @@ abstract: |
 keywords          : "Lab 8, Git"
 wordcount         : 
 
-bibliography      : ["r-references.bib"]
+bibliography      : ["references.bib"]
 
 floatsintext      : no
 figurelist        : no
@@ -38,7 +38,7 @@ linenumbers       : no
 mask              : no
 draft             : no
 
-documentclass     : "apa6"
+documentclass     : "apa6, man"
 classoption       : "man"
 output            : papaja::apa6_pdf
 ---
@@ -49,6 +49,7 @@ library(rio)
 library(tidyverse)
 library(here)
 library(magrittr)
+library(knitr)
 
 knitr::opts_chunk$set(fig.width=6.5, fig.height=8) 
 
@@ -72,6 +73,8 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
+In @batson1997 we learn that empathy is actually perspective taking (cool!). And in [@epley2004] we learn people are selfish when perspective taking (because they are egocentric!).
+
 ## Participants
 
 ## Material
@@ -79,19 +82,25 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ## Procedure
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+We used `r cite_r("references.bib")` for all our analyses.
 
 
 # Results
+```{r summary statistics, echo=FALSE}
+results <- data %>% 
+  group_by(sex, frl) %>% 
+  summarize(math_mean = mean(tmathss), math_sd=sd(tmathss), rdg_mean=mean(treadss), rdg_sd=sd(treadss))
+kable(results)
 
+```
 # Discussion
 
 
 \newpage
 
 # References
-```{r create_r-references}
-r_refs(file = "r-references.bib")
+```{r create_references, warning=FALSE}
+r_refs(file = "references.bib")
 ```
 
 \begingroup
