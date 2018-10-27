@@ -64,14 +64,14 @@
 
 
   \title{Lab 8 Group Git Project}
-    \author{Kathryn Denning\textsuperscript{1}, Tamara Niella\textsuperscript{1,2},
-\& Karlena Ochoa}
+    \author{Kathryn Denning\textsuperscript{1}, Tamara Niella\textsuperscript{1}, \&
+Karlena Ochoa \textsuperscript{1}}
     \date{}
   
 \shorttitle{Lab 8}
 \affiliation{
 \vspace{0.5cm}
-\textsuperscript{1} University of Oregon\\\textsuperscript{2} Univeristy of Oregon}
+\textsuperscript{1} University of Oregon}
 \keywords{Lab 8, Git}
 \usepackage{csquotes}
 \usepackage{upgreek}
@@ -137,29 +137,28 @@ We used R {[}Version 3.5.1; @{]} and the R-packages \emph{\}base}
 {[}@\}R-base{]}, \emph{dplyr} (Version 0.7.6; Wickham, François, Henry,
 \& Müller, 2018), \emph{forcats} (Version 0.3.0; Wickham, 2018a),
 \emph{ggplot2} (Version 3.0.0; Wickham, 2016), \emph{here} (Version 0.1;
-Müller, 2017), \emph{magrittr} (Version 1.5; Bache \& Wickham, 2014),
-\emph{papaja} (Version 0.1.0.9842; Aust \& Barth, 2018), \emph{purrr}
-(Version 0.2.5; Henry \& Wickham, 2018), \emph{readr} (Version 1.1.1;
-Wickham, Hester, \& Francois, 2017), \emph{rio} (Version 0.5.10; C.-h.
-Chan, Chan, Leeper, \& Becker, 2018), \emph{stringr} (Version 1.3.1;
-Wickham, 2018b), \emph{tibble} (Version 1.4.2; Müller \& Wickham, 2018),
-\emph{tidyr} (Version 0.8.1; Wickham \& Henry, 2018), and
-\emph{tidyverse} (Version 1.2.1; Wickham, 2017) for all our analyses.
+Müller, 2017), \emph{kableExtra} (Version 0.9.0; Zhu, 2018),
+\emph{knitr} (Version 1.20; Xie, 2015), \emph{magrittr} (Version 1.5;
+Bache \& Wickham, 2014), \emph{papaja} (Version 0.1.0.9842; Aust \&
+Barth, 2018), \emph{purrr} (Version 0.2.5; Henry \& Wickham, 2018),
+\emph{readr} (Version 1.1.1; Wickham, Hester, \& Francois, 2017),
+\emph{rio} (Version 0.5.10; C.-h. Chan, Chan, Leeper, \& Becker, 2018),
+\emph{stringr} (Version 1.3.1; Wickham, 2018b), \emph{tibble} (Version
+1.4.2; Müller \& Wickham, 2018), \emph{tidyr} (Version 0.8.1; Wickham \&
+Henry, 2018), and \emph{tidyverse} (Version 1.2.1; Wickham, 2017) for
+all our analyses.
 
 \section{Results}\label{results}
 
-\begin{tabular}{l|l|r|r|r|r}
-\hline
+\begin{tabular}{llrrrr}
+\toprule
 sex & frl & math\_mean & math\_sd & rdg\_mean & rdg\_sd\\
-\hline
+\midrule
 boy & no & 492.8523 & 46.33845 & 441.4553 & 32.31828\\
-\hline
 boy & yes & 469.8716 & 46.09285 & 425.3794 & 26.62931\\
-\hline
 girl & no & 501.2057 & 45.96210 & 448.5353 & 34.52403\\
-\hline
 girl & yes & 477.5084 & 46.30459 & 430.8029 & 27.42125\\
-\hline
+\bottomrule
 \end{tabular}
 
 \section{Discussion}\label{discussion}
@@ -241,6 +240,16 @@ A grammar of data manipulation}. Retrieved from
 Wickham, H., Hester, J., \& Francois, R. (2017). \emph{Readr: Read
 rectangular text data}. Retrieved from
 \url{https://CRAN.R-project.org/package=readr}
+
+\hypertarget{ref-R-knitr}{}
+Xie, Y. (2015). \emph{Dynamic documents with R and knitr} (2nd ed.).
+Boca Raton, Florida: Chapman; Hall/CRC. Retrieved from
+\url{https://yihui.name/knitr/}
+
+\hypertarget{ref-R-kableExtra}{}
+Zhu, H. (2018). \emph{KableExtra: Construct complex table with 'kable'
+and pipe syntax}. Retrieved from
+\url{https://CRAN.R-project.org/package=kableExtra}
 
 \endgroup
 

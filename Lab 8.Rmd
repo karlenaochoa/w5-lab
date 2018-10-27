@@ -9,14 +9,14 @@ author:
     address       : "Postal address"
     email         : "kdenning@uorego.edu"
   - name          : "Tamara Niella"
-    affiliation   : "1,2"
+    affiliation   : "1"
   - name          : "Karlena Ochoa "
+    affiliation   : "1"
 
 affiliation:
   - id            : "1"
     institution   : "University of Oregon"
-  - id            : "2"
-    institution   : "Univeristy of Oregon"
+
 
 
 
@@ -38,7 +38,7 @@ linenumbers       : no
 mask              : no
 draft             : no
 
-documentclass     : "apa6, man"
+documentclass     : "apa6"
 classoption       : "man"
 output            : papaja::apa6_pdf
 ---
@@ -50,6 +50,7 @@ library(tidyverse)
 library(here)
 library(magrittr)
 library(knitr)
+library(kableExtra)
 
 knitr::opts_chunk$set(fig.width=6.5, fig.height=8) 
 
@@ -90,8 +91,8 @@ We used `r cite_r("references.bib")` for all our analyses.
 results <- data %>% 
   group_by(sex, frl) %>% 
   summarize(math_mean = mean(tmathss), math_sd=sd(tmathss), rdg_mean=mean(treadss), rdg_sd=sd(treadss))
-kable(results)
 
+kable(results, "latex", booktabs=TRUE)
 ```
 # Discussion
 
