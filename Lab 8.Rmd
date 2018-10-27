@@ -1,46 +1,32 @@
 ---
-title             : "The title"
-shorttitle        : "Title"
+title             : "Lab 8 Group Git Project"
+shorttitle        : "Lab 8"
 
 author: 
-  - name          : "First Author"
+  - name          : "Kathryn Denning"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
     address       : "Postal address"
-    email         : "my@email.com"
-  - name          : "Ernst-August Doelle"
+    email         : "kdenning@uorego.edu"
+  - name          : "Tamara Niella"
     affiliation   : "1,2"
+  - name          : "Karlena Ochoa "
 
 affiliation:
   - id            : "1"
-    institution   : "Wilhelm-Wundt-University"
+    institution   : "University of Oregon"
   - id            : "2"
-    institution   : "Konstanz Business School"
+    institution   : "Univeristy of Oregon"
 
-authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
-  Enter author note here.
 
 abstract: |
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  
-  One or two sentences to put the results into a more **general context**.
-  
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  This is where we would write our abstract. 
   
   <!-- https://tinyurl.com/ybremelq -->
   
-keywords          : "keywords"
-wordcount         : "X"
+keywords          : "Lab 8, Git"
+wordcount         : 
 
 bibliography      : ["r-references.bib"]
 
@@ -48,7 +34,7 @@ floatsintext      : no
 figurelist        : no
 tablelist         : no
 footnotelist      : no
-linenumbers       : yes
+linenumbers       : no
 mask              : no
 draft             : no
 
