@@ -94,8 +94,25 @@ results <- data %>%
 
 kable(results, "latex", booktabs=TRUE)
 ```
+
+```{r plot, echo=FALSE}
+data$frl <- as.factor(data$frl)
+p<- ggplot(data, aes(totexp, tmathss, color=frl))+
+  geom_point(color="gray")+
+  theme_minimal()+
+  geom_smooth(method="lm")+
+  labs(title="Relation between teacher experience and math scores", subtitle= "Separate regression lines displaed by free/reduced lunch status", x= "Teacher Experience (years)", y="Total Math Scale Score")+
+  scale_color_manual(name="Lunch status", labels=c("Free/Reduced Price Meals", "Paid Meals"), values = c("#F8766D", "#00BFC4"))
+
+p+ theme(legend.position="bottom")
+
+
+```
+
+
 # Discussion
 
+As we can see in the plot, there is a positive relation between  Teacher's years of experience and Total Math Scores, Math scores are generally higher when there is Free/reduced price meals than when meals are paid. 
 
 \newpage
 
