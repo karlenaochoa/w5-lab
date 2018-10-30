@@ -44,6 +44,9 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
+# This chunk should probably be `include = FALSE`, but I would not load your
+# data here.
+
 library("papaja")
 library(rio)
 library(tidyverse)
@@ -54,7 +57,7 @@ library(kableExtra)
 
 knitr::opts_chunk$set(fig.width=6.5, fig.height=8) 
 
-data<- import(here("DATA", "star2.csv"))
+data <- import(here("DATA", "star2.csv"))
 
 ```
 
@@ -62,12 +65,6 @@ data<- import(here("DATA", "star2.csv"))
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
-```
-
-```{r load, include=FALSE }
-
-
-
 ```
 
 
@@ -87,26 +84,44 @@ We used `r cite_r("references.bib")` for all our analyses.
 
 
 # Results
-```{r summary statistics, echo=FALSE}
+```{r}
+# For papaja docs, echo is set to FALSE by default, so no need to put it in
+# each chunk. If you wanted it to behave like a standard Rmd
 results <- data %>% 
   group_by(sex, frl) %>% 
-  summarize(math_mean = mean(tmathss), math_sd=sd(tmathss), rdg_mean=mean(treadss), rdg_sd=sd(treadss))
+  summarize(math_mean = mean(tmathss), 
+            math_sd = sd(tmathss), 
+            rdg_mean = mean(treadss), 
+            rdg_sd = sd(treadss))
 
-kable(results, "latex", booktabs=TRUE)
+# Code styling!
+
+kable(results, 
+      "latex", 
+      booktabs = TRUE,
+      caption = "My amazing table")
+# Add a caption
 ```
 
-```{r plot, echo=FALSE}
+```{r plot, fig.cap = "My amazing figure. Look how beautiful!"}
+# Note for figures you have to add the caption as an option to the code chunk
 data$frl <- as.factor(data$frl)
-p<- ggplot(data, aes(totexp, tmathss, color=frl))+
-  geom_point(color="gray")+
-  theme_minimal()+
-  geom_smooth(method="lm")+
-  labs(title="Relation between teacher experience and math scores", subtitle= "Separate regression lines displaed by free/reduced lunch status", x= "Teacher Experience (years)", y="Total Math Scale Score")+
-  scale_color_manual(name="Lunch status", labels=c("Free/Reduced Price Meals", "Paid Meals"), values = c("#F8766D", "#00BFC4"))
 
-p+ theme(legend.position="bottom")
+p <- ggplot(data, aes(totexp, tmathss, color=frl)) + 
+  geom_point(color="gray") +
+  theme_minimal() +
+  geom_smooth(method="lm") +
+  labs(title = "Relation between teacher experience and math scores", 
+       subtitle = "Separate regression lines displaed by free/reduced lunch status", 
+       x = "Teacher Experience (years)", 
+       y = "Total Math Scale Score") +
+  scale_color_manual(name = "Lunch status", 
+                     labels = c("Free/Reduced Price Meals", "Paid Meals"), 
+                     values = c("#F8766D", "#00BFC4"))
 
+p + theme(legend.position="bottom")
 
+# Code styling!
 ```
 
 
